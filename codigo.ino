@@ -3,7 +3,7 @@
 #include <WiFiClientSecure.h>
 
 // Definición del tipo de sensor DHT
-#define DHT_PIN 22
+#define DHT_PIN 22 // Pin analogico del sensor
 #define DHT_TYPE DHT11
 
 // Configuración del puerto serial
