@@ -55,8 +55,8 @@ void loop() {
     if (currentMillis - previousMillisThingSpeak >= intervalThingSpeak) { // se verifica que pasaron 15 segundos antes de enviar la lectura de los valores
       previousMillisThingSpeak = currentMillis; // se acutaliza el valor anterior del envio de datos al thingspeak
       
-      if (WiFi.status() == WL_CONNECTED) { // verificamos tener conexion a la ed para proseguir con el envio
-        HTTPClient http; // generamos una instancia de calse http para manejar el envio de datos al servidor thingspeak
+      if (WiFi.status() == WL_CONNECTED) { // verificamos tener conexion a la red para proseguir con el envio
+        HTTPClient http; // generamos una instancia de clase http para manejar el envio de datos al servidor thingspeak
         
         int ledState = digitalRead(LED_PIN); // leemos el estado del led para la graficacion
 
