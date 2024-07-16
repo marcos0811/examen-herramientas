@@ -2,15 +2,15 @@
 #include <HTTPClient.h>
 #include <DHT.h>
 
-// Definición del tipo de sensor DHT
+// Definicimos el tipo de sensor DHT
 #define DHT_PIN 22
 #define DHT_TYPE DHT11
 
-// Configuración de WiFi
+// Configuramos ela red WiFi
 const char* ssid = "examen_herramientas";
 const char* password = "1450329923"; 
 
-// Configuración de ThingSpeak
+// Configuramos el ThingSpeak
 const String apiKey = "1PFTU3FYLRD3KO9F";  
 const String apiUrl = "http://api.thingspeak.com/update";
 
