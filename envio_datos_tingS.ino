@@ -7,21 +7,19 @@
 #define DHT_TYPE DHT11
 
 // Configuración de WiFi
-const char* ssid = "examen_herramientas";           // Reemplaza con tu SSID
-const char* password = "1450329923"; // Reemplaza con tu contraseña
+const char* ssid = "examen_herramientas";
+const char* password = "1450329923"; 
 
 // Configuración de ThingSpeak
-const String apiKey = "1PFTU3FYLRD3KO9F";  // Reemplaza con tu clave API
+const String apiKey = "1PFTU3FYLRD3KO9F";  
 const String apiUrl = "http://api.thingspeak.com/update";
 
-// Inicialización del sensor DHT
 DHT dht(DHT_PIN, DHT_TYPE);
 
 void setup() {
   Serial.begin(115200);
   dht.begin();
 
-  // Conexión a WiFi
   WiFi.begin(ssid, password);
   Serial.print("Conectando a ");
   Serial.print(ssid);
@@ -52,7 +50,7 @@ void loop() {
     return;
   }
 
-  // Enviar los datos a ThingSpeak
+  // Enviamos los datos a ThingSpeak
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     String data = "api_key=" + apiKey + "&field1=" + String(temperatura) + "&field2=" + String(humedad);
@@ -77,5 +75,5 @@ void loop() {
     Serial.println("Error: WiFi no conectado. No se pueden enviar datos a ThingSpeak.");
   }
 
-  delay(15000);  // Espera de 20 segundos entre cada envío de datos
+  delay(15000);  // Espera de 15 segundos entre cada envío de datos
 }
